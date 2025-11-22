@@ -31,7 +31,6 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -43,7 +42,7 @@ a {
 
 /* For Contact Section Start */
 #contact{
-  background: url(/images/map.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/map.jpg);
   background-size: cover;       
   background-repeat: no-repeat;  
   background-position: center; 
@@ -52,11 +51,12 @@ a {
 
 /* For Footer Start */
 #footer ul li a{
-  color: #262626;
-  font-weight: 500;
-  text-decoration: none;
+  color: #b0b0b0;
+  transition: all 0.3s ease;
 }
 #footer ul li a:hover {
-  text-decoration: underline;
+  color: #ffffff;
+  padding-left: 5px;
+  text-decoration: none;
 }
 /* For Footer end */
