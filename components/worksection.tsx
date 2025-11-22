@@ -3,58 +3,58 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container, Row, Col } from 'react-bootstrap';
 
+// Data untuk cards (supaya tidak copy-paste code berulang)
+const workItems = [
+    {
+        title: "Lorem Ipsum I",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque similique sunt alias!",
+        img: "/images/image-44.jpg" // Pastikan gambar ini ada, atau ganti nama file
+    },
+    {
+        title: "Lorem Ipsum II",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. At!",
+        img: "/images/image-45.jpg"
+    },
+    {
+        title: "Lorem Ipsum III",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam in voluptas reiciendis iure!",
+        img: "/images/image-46.jpg"
+    }
+];
+
 function WorkSection() {
     return (
-        <Container >
-            <Row className='mb-3'>
-                <Col md={12} className="text-center">
-                    <h2>What We Work</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, officiis?</p>
+        <Container className="py-5">
+            <Row className='mb-5'>
+                <Col md={12} className="text-center text-white">
+                    <h2 className="fw-bold">Our Key Features</h2>
+                    <p className="lead text-white-50">Solusi lengkap untuk kesehatan finansial Anda</p>
                 </Col>
             </Row>
             <Row>
-                <Col md={4} className="mb-3">
-                    <Card>
-                        <Card.Img variant="top" src="/images/image-44.jpg"></Card.Img>
-                        <Card.Body>
-                            <Card.Title>
-                                Rice with wild boar liver and cutted chese form texas
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sunt veritatis voluptas explicabo sapiente.
-                            </Card.Text>
-                            <Button variant="primary">Read More</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col md={4} className="mb-3">
-                    <Card>
-                        <Card.Img variant="top" src="/images/image-45.jpg"></Card.Img>
-                        <Card.Body>
-                            <Card.Title>
-                                Rice with wild boar liver and cutted chese form texas
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sunt veritatis voluptas explicabo sapiente.
-                            </Card.Text>
-                            <Button variant="primary">Read More</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col md={4} className="mb-3">
-                    <Card>
-                        <Card.Img variant="top" src="/images/image-46.jpg"></Card.Img>
-                        <Card.Body>
-                            <Card.Title>
-                                Rice with wild boar liver and cutted chese form texas
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sunt veritatis voluptas explicabo sapiente.
-                            </Card.Text>
-                            <Button variant="primary">Read More</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
+                {workItems.map((item, index) => (
+                    <Col md={4} className="mb-4" key={index}>
+                        <Card className="h-100 border-0 shadow-lg overflow-hidden hover-scale">
+                            {/* Tips: Tambahkan class CSS custom 'hover-scale' nanti jika ingin efek zoom */}
+                            <div style={{ height: '200px', overflow: 'hidden' }}>
+                                <Card.Img 
+                                    variant="top" 
+                                    src={item.img} 
+                                    style={{ objectFit: 'cover', height: '100%', width: '100%' }} 
+                                />
+                            </div>
+                            <Card.Body className="d-flex flex-column">
+                                <Card.Title className="fw-bold">{item.title}</Card.Title>
+                                <Card.Text className="text-muted">
+                                    {item.desc}
+                                </Card.Text>
+                                <Button variant="outline-primary" className="mt-auto rounded-pill">
+                                    Read More
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
             </Row>
         </Container>
     )
