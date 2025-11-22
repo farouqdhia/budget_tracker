@@ -7,9 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-// Ganti nama function menjadi AppNavbar (PascalCase) agar valid React Component
 function AppNavbar() {
-    // State untuk mengubah warna navbar saat discroll (opsional, utk efek keren)
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -27,9 +25,8 @@ function AppNavbar() {
     return (
         <Navbar 
             expand="lg" 
-            fixed="top" // Membuat navbar melayang tetap di atas
+            fixed="top"
             className={`transition-all duration-300 ${scrolled ? 'bg-white shadow-sm py-2' : 'bg-white/90 py-3'}`}
-            // Catatan: Jika bg-white/90 tidak jalan (karena butuh Tailwind), pakai style manual di bawah:
             style={{ 
                 transition: '0.3s ease-in-out',
                 backgroundColor: scrolled ? '#ffffff' : 'rgba(255, 255, 255, 0.95)' 

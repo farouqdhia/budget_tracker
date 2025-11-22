@@ -60,3 +60,14 @@ a {
   text-decoration: none;
 }
 /* For Footer end */
+
+.hover-light:hover {
+  color: #ffffff !important;
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+
+.placeholder-gray::placeholder {
+    color: #e0e0e0;
+    opacity: 0.7;
+}

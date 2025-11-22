@@ -3,12 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container, Row, Col } from 'react-bootstrap';
 
-// Data untuk cards (supaya tidak copy-paste code berulang)
 const workItems = [
     {
         title: "Lorem Ipsum I",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque similique sunt alias!",
-        img: "/images/image-44.jpg" // Pastikan gambar ini ada, atau ganti nama file
+        img: "/images/image-44.jpg"
     },
     {
         title: "Lorem Ipsum II",
@@ -35,7 +34,6 @@ function WorkSection() {
                 {workItems.map((item, index) => (
                     <Col md={4} className="mb-4" key={index}>
                         <Card className="h-100 border-0 shadow-lg overflow-hidden hover-scale">
-                            {/* Tips: Tambahkan class CSS custom 'hover-scale' nanti jika ingin efek zoom */}
                             <div style={{ height: '200px', overflow: 'hidden' }}>
                                 <Card.Img 
                                     variant="top" 

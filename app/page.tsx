@@ -16,16 +16,15 @@ import { Container, Row, Col, Button, Badge } from "react-bootstrap";
  
 export default function Home() {
   return (
-    <div className="bg-light"> {/* Background abu-abu sangat muda utk seluruh hal */}
+    <div className="bg-light">
       <Navbar />
       
       <main>
         <HeroSection />
         
-        {/* SECTION: ABOUT US (Dimodifikasi) */}
         <section className="py-5 bg-white">
           <Container className="my-5">
-            <Row className="align-items-center gx-5"> {/* align-items-center agar vertikal tengah */}
+            <Row className="align-items-center gx-5">
               
               {/* Kolom Teks */}
               <Col md={6} className="mb-5 mb-md-0">
@@ -49,7 +48,6 @@ export default function Home() {
               {/* Kolom Gambar */}
               <Col md={6}>
                 <div className="position-relative">
-                  {/* Dekorasi background kotak di belakang gambar (opsional) */}
                   <div className="position-absolute bg-info rounded-4 top-0 start-0 w-100 h-100 translate-middle-x" 
                        style={{ zIndex: 0, transform: 'rotate(-3deg) scale(0.95)', opacity: 0.2 }}></div>
                   
@@ -69,14 +67,15 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* Section lainnya */}
-        <section className="bg-dark text-white py-5">
+        <section id="work" className="bg-dark text-white py-5">
           <WorkSection />
         </section>
         
-        <ServiceSection />
+        <section id="services">
+          <ServiceSection />
+        </section>
         
-        <section id="contact" className="py-5">
+        <section id="contact" className="py-5"> 
           <ContactSection />
         </section>
         

@@ -34,17 +34,16 @@ const HeroSection = () => {
 
     return (
         <section id="home">
-            <Carousel fade interval={5000} controls={false} indicators={true}>
+            <Carousel fade interval={5000} controls={true} indicators={true} pause="hover">
                 {slides.map((slide, index) => (
                     <Carousel.Item key={index}>
                         <div 
                             className="d-flex align-items-center justify-content-center text-center text-white"
                             style={{
-                                // Overlay gelap (0.6) agar teks putih terbaca jelas di gambar apa saja
                                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(${slide.imageUrl})`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                height: "85vh", // Tinggi layar hampir penuh agar terlihat megah
+                                height: "85vh",
                                 position: "relative"
                             }}>
                             
